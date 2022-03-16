@@ -1,1 +1,1 @@
-# Vechile_Classification_with_NumberPlate_Detection
+# Vehicle_Classification_with_NumberPlate_Detection
