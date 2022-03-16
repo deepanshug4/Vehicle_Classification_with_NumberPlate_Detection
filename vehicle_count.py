@@ -12,7 +12,7 @@ from tracker import *
 tracker = EuclideanDistTracker()
 
 # Initialize the videocapture object
-cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('Assets/video.mp4')
 input_size = 320
 
 # Detection confidence threshold
@@ -41,8 +41,8 @@ required_class_index = [2, 3, 5, 7]
 detected_classNames = []
 
 ## Model Files
-modelConfiguration = 'yolov3-320.cfg'
-modelWeigheights = 'yolov3-320.weights'
+modelConfiguration = 'models\yolov3-320.cfg'
+modelWeigheights = 'models\yolov3-320.weights'
 
 # configure the network model
 net = cv2.dnn.readNetFromDarknet(modelConfiguration, modelWeigheights)
@@ -160,7 +160,7 @@ def realTime():
         # Set the input of the network
         net.setInput(blob)
         layersNames = net.getLayerNames()
-        outputNames = [(layersNames[i[0] - 1]) for i in net.getUnconnectedOutLayers()]
+        outputNames = [(layersNames[i - 1]) for i in net.getUnconnectedOutLayers()]
         # print([(layersNames[i - 1]) for i in net.getUnconnectedOutLayers()])
         # Feed data to the network
         outputs = net.forward(outputNames)
