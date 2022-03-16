@@ -14,9 +14,8 @@
 ---
 ### Counting of Different Types of Vehicles:
 <p align="center">
-   <video src="https://user-images.githubusercontent.com/41968942/158659842-892aa658-6428-426e-a3b4-f84b7af75a2b.mp4" | width=300>
+   <video src="https://user-images.githubusercontent.com/41968942/158681333-74d3d972-8229-4e6f-99b5-338aa7c4f707.mp4" | width=300>
 </p>
-
 
 - [Features](#features)
 - [Installation](#Installation)
