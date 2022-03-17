@@ -5,7 +5,7 @@
 </p>
 
 <p>
-    A vehicle detection, classifcation and counting model used to maintain a record of all the vehicles passing an area at a particular time. This comes with a license plate detection which can be used to keep a record of all those who break some traffic rule.
+    A vehicle detection, classification and counting model is used to maintain a record of all the vehicles passing an area at a particular time. This comes with license plate detection which can be used to keep a record of all those who break some traffic rule.
 
 </p>
 
