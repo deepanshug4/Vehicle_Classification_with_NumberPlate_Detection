@@ -30,7 +30,7 @@ down_line_position = middle_line_position + 15
 
 
 # Store Coco Names in a list
-classesFile = "coco.names"
+classesFile = "classes_file/coco.names"
 classNames = open(classesFile).read().strip().split('\n')
 print(classNames)
 print(len(classNames))
@@ -203,44 +203,5 @@ def realTime():
     cap.release()
     cv2.destroyAllWindows()
 
-
-image_file = 'vehicle classification-image02.png'
-def from_static_image(image):
-    img = cv2.imread(image)
-
-    blob = cv2.dnn.blobFromImage(img, 1 / 255, (input_size, input_size), [0, 0, 0], 1, crop=False)
-
-    # Set the input of the network
-    net.setInput(blob)
-    layersNames = net.getLayerNames()
-    outputNames = [(layersNames[i[0] - 1]) for i in net.getUnconnectedOutLayers()]
-    # Feed data to the network
-    outputs = net.forward(outputNames)
-
-    # Find the objects from the network output
-    postProcess(outputs,img)
-
-    # count the frequency of detected classes
-    frequency = collections.Counter(detected_classNames)
-    print(frequency)
-    # Draw counting texts in the frame
-    cv2.putText(img, "Car:        "+str(frequency['car']), (20, 40), cv2.FONT_HERSHEY_SIMPLEX, font_size, font_color, font_thickness)
-    cv2.putText(img, "Motorbike:  "+str(frequency['motorbike']), (20, 60), cv2.FONT_HERSHEY_SIMPLEX, font_size, font_color, font_thickness)
-    cv2.putText(img, "Bus:        "+str(frequency['bus']), (20, 80), cv2.FONT_HERSHEY_SIMPLEX, font_size, font_color, font_thickness)
-    cv2.putText(img, "Truck:      "+str(frequency['truck']), (20, 100), cv2.FONT_HERSHEY_SIMPLEX, font_size, font_color, font_thickness)
-
-
-    cv2.imshow("image", img)
-
-    cv2.waitKey(0)
-
-    # save the data to a csv file
-    with open("static-data.csv", 'a') as f1:
-        cwriter = csv.writer(f1)
-        cwriter.writerow([image, frequency['car'], frequency['motorbike'], frequency['bus'], frequency['truck']])
-    f1.close()
-
-
 if __name__ == '__main__':
     realTime()
-    # from_static_image(image_file)
