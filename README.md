@@ -279,4 +279,4 @@ Check [here](https://github.com/deepanshug4/Vehicle_Classification_with_NumberPl
 
 ## 📜 License
 
-This software is open source, licensed under the [MIT License](https://github.com/PawanKolhe/color-calendar/blob/master/LICENSE).
+This software is open source, licensed under the [MIT License](https://github.com/deepanshug4/Vehicle_Classification_with_NumberPlate_Detection/blob/main/LICENSE).
